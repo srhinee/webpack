@@ -6,7 +6,8 @@ module.exports = {
 		path: path.resolve(__dirname, "dist")
 		// filename: 'my-first-webpack.bundle.js'
 	},
-	mode: "production",
+	// mode: "production",
+	mode: "development",
 	module: {
 		rules: [
 			{ test: /\.vue$/, use: "vue-loader" },
