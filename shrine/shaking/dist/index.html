@@ -31,6 +31,7 @@
 	</style>
 </head>
 <body>
+
 <script src="./main.js"></script>
 <script src="./testSourceMap.js"></script>
 <div id="parent">
@@ -39,37 +40,41 @@
 	</div>
 </div>
 <script>
-	let parent = document.getElementById ('parent'),
-		children = document.getElementById ('children')
-	console.table ({
-		'window.screen.height 物理屏幕高': window.screen.height,
-		'window.screen.availHeight 物理屏幕高-mac导航栏占用': window.screen.availHeight,
-		'window.screenTop 浏览器距显示器顶部': window.screenTop,
-		'--------------------':'--------------------',
-		'document.body.offsetHeight content+padding+border':document.body.offsetHeight,
-		'document.body.clientHeight content+padding': document.body.clientHeight,
-		'document.body.scrollHeight 同上':document.body.scrollHeight,
-		'----------------------':'--------------------',
-		'document.body.offsetTop ':document.body.offsetTop,
-		'document.body.clientTop border':document.body.clientTop,
-		'document.body.scrollTop':document.body.scrollTop,
-		'---------------------':'--------------------',
-		'parent.offsetHeight':parent.offsetHeight,
-		'parent.clientHeight':parent.clientHeight,
-		'parent.scrollHeight padding+子->margin+border+padding+content':parent.scrollHeight,
-		'-----------------------':'--------------------',
-		'parent.offsetTop margin+父->padidng+border':parent.offsetTop,
-		'parent.clientTop border':parent.clientTop,
-		'parent.scrollTop':parent.scrollTop,
-		'------------------------':'--------------------',
-		'children.offsetHeight':children.offsetHeight,
-		'children.clientHeight':children.clientHeight,
-		'children.scrollHeight':children.scrollHeight,
-		'-------------------------':'--------------------',
-		'children.offsetTop':children.offsetTop,
-		'children.clientTop':children.clientTop,
-		'children.scrollTop':children.scrollTop,
-	})
+
+		let parent = document.getElementById ('parent'),
+			children = document.getElementById ('children'),
+		 con=()=>console.table ({
+			'window.screen.height 物理屏幕高': window.screen.height,
+			'window.screen.availHeight 物理屏幕高-mac导航栏占用': window.screen.availHeight,
+			'window.screenTop 浏览器距显示器顶部': window.screenTop,
+			'--------------------':'--------------------',
+			'document.body.offsetHeight content+padding+border':document.body.offsetHeight,
+			'document.body.clientHeight content+padding': document.body.clientHeight,
+			'document.body.scrollHeight 同上':document.body.scrollHeight,
+			'----------------------':'--------------------',
+			'document.body.offsetTop ':document.body.offsetTop,
+			'document.body.clientTop border':document.body.clientTop,
+			'document.body.scrollTop':document.body.scrollTop,
+			'---------------------':'--------------------',
+			'parent.offsetHeight clientHeight+clientTop':parent.offsetHeight,
+			'parent.clientHeight':parent.clientHeight,
+			'parent.scrollHeight padding+子->margin+border+padding+content':parent.scrollHeight,
+			'-----------------------':'--------------------',
+			'parent.offsetTop margin+父->padidng+border':parent.offsetTop,
+			'parent.clientTop border':parent.clientTop,
+			'parent.scrollTop':parent.scrollTop,
+			'------------------------':'--------------------',
+			'children.offsetHeight':children.offsetHeight,
+			'children.clientHeight':children.clientHeight,
+			'children.scrollHeight':children.scrollHeight,
+			'-------------------------':'--------------------',
+			'children.offsetTop':children.offsetTop,
+			'children.clientTop':children.clientTop,
+			'children.scrollTop':children.scrollTop,
+		})
+		children.addEventListener("scroll", con,true)
+		// parent.addEventListener("scroll", con)
+		window.addEventListener("scroll", con,true)
 
 </script>
 </body>
