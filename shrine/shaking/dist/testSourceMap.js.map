@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "testSourceMap.js",
+	"mappings": "AAAA,UACA;AACA;AACA;",
+	"sources": [
+		"a.txt"
+	],
+	"sourceRoot": ""
+}
+
