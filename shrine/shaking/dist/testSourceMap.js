@@ -1,4 +1,4 @@
-let a = 1;
+let a = 1;debugger
 let b = 2
 let c = 3
 
