@@ -91,15 +91,10 @@
   !*** ./a1.js ***!
   \***************/
 /*! exports provided: bar, foo */
-/*! exports used: bar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bar; });
-/* unused harmony export foo */
-const bar = 'bar';
-const foo = 'foo';
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"bar\", function() { return bar; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"foo\", function() { return foo; });\nconst bar = 'bar';\nconst foo = 'foo';\n\n\n//# sourceURL=webpack:///./a1.js?");
 
 /***/ }),
 
@@ -108,17 +103,11 @@ const foo = 'foo';
   !*** ./index1.js ***!
   \*******************/
 /*! no exports provided */
-/*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _a1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a1.js */ "./a1.js");
-
-console.log(_a1_js__WEBPACK_IMPORTED_MODULE_0__[/* bar */ "a"]);
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _a1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a1.js */ \"./a1.js\");\n\nconsole.log(_a1_js__WEBPACK_IMPORTED_MODULE_0__[\"bar\"]);\n\n\n//# sourceURL=webpack:///./index1.js?");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.js.map
