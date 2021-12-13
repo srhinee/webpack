@@ -1,7 +1,8 @@
-import fun from './a.js'
-import {value} from './a.json'
+import fun from '!css-loader!./a.vue'
+// import {value} from './a.json'
 function log (a) {
   console.log(a)
 }
 
-log(fun(value.value))
+log(fun)
+// log(value)

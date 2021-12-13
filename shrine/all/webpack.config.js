@@ -1,7 +1,7 @@
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 module.exports = {
-	entry: path.resolve(__dirname, "a.js"),
+	entry: path.resolve(__dirname, "index.js"),
 	output: {
 		path: path.resolve(__dirname, "dist")
 		// filename: 'my-first-webpack.bundle.js'
