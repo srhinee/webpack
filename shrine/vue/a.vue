@@ -1,12 +1,12 @@
 <template>
-	<div class="a">vue template</div>
+	<div class="a">{{text}}</div>
 </template>
 
 <script>
 export default {
-	name: 'a',
+	name: 'index',
 	data () {
-		return {}
+		return {text:'vue template'}
 	},
 	methods: {},
 }

@@ -1,8 +1,7 @@
-import fun from '!css-loader!./a.vue'
-// import {value} from './a.json'
+import fun from 'a.css!=!./loader.js!./index.js'
+/* STYLE: body { background: red; } */
 function log (a) {
   console.log(a)
 }
 
 log(fun)
-// log(value)

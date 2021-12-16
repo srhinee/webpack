@@ -1,4 +1,5 @@
 const path = require ("path")
+const VueLoaderPlugin = require ("vue-loader").VueLoaderPlugin
 module.exports = {
 	entry: path.resolve (__dirname, "index.js"),
 	output: {
@@ -9,7 +10,9 @@ module.exports = {
 	mode: "development",
 	module: {
 		rules: [
+			{test: /\.vue$/, use: "vue-loader"},
 			{test: /\.css$/, use: ["style-loader", "css-loader"]}
 		]
 	},
+	plugins: [new VueLoaderPlugin ()]
 }
