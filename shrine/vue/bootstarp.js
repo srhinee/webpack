@@ -4,10 +4,15 @@ const fs = require ("fs")
 const compiler = webpack (options)
 
 compiler.run ((err, stats) => {
-	fs.writeFile ('dist/stat.json', JSON.stringify(stats.toJson ()) , function (err) {
+	const obj=stats.toJson()
+	fs.writeFile ('dist/stat.json', JSON.stringify ({
+		moduleNums: obj.modules.length,
+		moduleIds: obj.modules.map (v => v.id)
+	}), function (err) {
 		console.log (err)
 	})
-	stats.toString ({
+	console.log (stats.toString ({
 		colors: true // 在控制台展示颜色
-	})
+	}))
+
 })

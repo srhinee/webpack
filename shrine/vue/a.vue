@@ -1,18 +1,18 @@
-<template>
-	<div class="a">{{text}}</div>
+<template lang="pug">
+	.a {{text}}
 </template>
 
 <script>
 export default {
 	name: 'index',
 	data () {
-		return {text:'vue template'}
+		return {text:'vue'}
 	},
 	methods: {},
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .a {
 	color: red;
 }
