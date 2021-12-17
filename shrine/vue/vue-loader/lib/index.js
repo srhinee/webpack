@@ -78,6 +78,7 @@ module.exports = function (source) {
 	// e.g. foo.vue?type=template&id=xxxxx
 	// and we will return early
 	if (incomingQuery.type) {
+		console.log('%c'+request+'\n'+incomingQuery.type,'color:#90a1f0')
 		return selectBlock (
 			descriptor,
 			loaderContext,
@@ -119,7 +120,7 @@ module.exports = function (source) {
 		const attrsQuery = attrsToQuery (descriptor.template.attrs)
 		const query = `?type=template${idQuery}${scopedQuery}${attrsQuery}${inheritQuery}`
 		const fileName = src.match (/(\w+)\.vue/)[1]
-		const matchResource = `${fileName}.${descriptor.template.attrs.lang}?vue!=!vue-loader!`
+		const matchResource = `${fileName}.${descriptor.template.attrs.lang}?type=template!=!vue-loader!`
 		const request = templateRequest = stringifyRequest (matchResource + src + query)
 		templateImport = `import { render, staticRenderFns } from ${request}`
 	}
@@ -152,7 +153,7 @@ module.exports = function (source) {
 			isServer || isShadow // needs explicit injection?
 		)
 	}
-
+	console.log('%c'+stylesCode,'color:#f93516')
 	let code = `
 ${templateImport}
 ${scriptImport}

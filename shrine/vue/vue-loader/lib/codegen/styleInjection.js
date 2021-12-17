@@ -23,7 +23,7 @@ module.exports = function genStyleInjectionCode (
 		const attrsQuery = attrsToQuery (style.attrs)
 		const inheritQuery = `&${loaderContext.resourceQuery.slice (1)}`
 		const fileName = src.match (/(\w+)\.vue/)[1]
-		const matchResource = `${fileName}.${style.attrs.lang || 'css'}!=!vue-loader!`
+		const matchResource = `${fileName}.${style.attrs.lang || 'css'}?type=style!=!vue-loader!`
 		// make sure to only pass id when necessary so that we don't inject
 		// duplicate tags when multiple components import the same css file
 		const idQuery = style.scoped ? `&id=${id}` : ``
