@@ -30,7 +30,7 @@ function loadTemplateCompiler (loaderContext) {
 		}
 	}
 }
-
+let counter=1
 module.exports = function (source) {
 	const loaderContext = this
 
@@ -85,7 +85,7 @@ module.exports = function (source) {
 			!!options.appendExtension
 		)
 	}
-
+	console.log('loader'+counter++)
 	// module id for scoped CSS & hot-reload
 	const rawShortFilePath = path
 	.relative (context, resourcePath)
@@ -128,7 +128,7 @@ module.exports = function (source) {
 	let scriptImport = `var script = {}`
 	if (descriptor.script) {
 		const src = descriptor.script.src || resourcePath
-		const attrsQuery = attrsToQuery (descriptor.script.attrs)
+		const attrsQuery = attrsToQuery (descriptor.script.attrs,'js')
 		const fileName = src.match (/(\w+)\.vue/)[1]
 		const matchResource = `${fileName}.${descriptor.script.attrs.lang || 'js'}!=!vue-loader!`
 		const query = `?vue&type=script${attrsQuery}${inheritQuery}`

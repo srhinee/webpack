@@ -20,7 +20,7 @@ module.exports = function genStyleInjectionCode (
 
 	function genStyleRequest (style, i) {
 		const src = style.src || resourcePath
-		const attrsQuery = attrsToQuery (style.attrs)
+		const attrsQuery = attrsToQuery (style.attrs,'css')
 		const inheritQuery = `&${loaderContext.resourceQuery.slice (1)}`
 		const fileName = src.match (/(\w+)\.vue/)[1]
 		const matchResource = `${fileName}.${style.attrs.lang || 'css'}!=!vue-loader!`

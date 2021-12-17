@@ -48,13 +48,14 @@ module.exports = code => code
 
 // This pitching loader is responsible for intercepting all vue block requests
 // and transform it into appropriate requests.
+let counter = 1
 module.exports.pitch = function (remainingRequest) {
   const options = loaderUtils.getOptions(this)
   const { cacheDirectory, cacheIdentifier } = options
   const query = qs.parse(this.resourceQuery.slice(1))
 
   let loaders = this.loaders
-
+	console.log('pitcher'+counter++)
   // if this is a language block request, eslint-loader may get matched
   // multiple times
   if (query.type) {
