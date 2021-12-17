@@ -92,6 +92,7 @@ class VueLoaderPlugin {
     // replace original rules
     compiler.options.module.rules = [
       pitcher,
+      ...clonedRules,
       ...rules
     ]
   }

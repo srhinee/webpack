@@ -1,9 +1,13 @@
 <template lang="pug">
-	.a {{text}}
+	.container
+		.a {{text}}
+		child
 </template>
 
 <script>
+import child from './b.vue'
 export default {
+	components: {child},
 	name: 'index',
 	data () {
 		return {text:'vue'}
@@ -14,6 +18,6 @@ export default {
 
 <style scoped lang="less">
 .a {
-	color: red;
+	color: #90a1f0;
 }
 </style>

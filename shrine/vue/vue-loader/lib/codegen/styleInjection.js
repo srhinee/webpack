@@ -27,8 +27,8 @@ module.exports = function genStyleInjectionCode (
 		// make sure to only pass id when necessary so that we don't inject
 		// duplicate tags when multiple components import the same css file
 		const idQuery = style.scoped ? `&id=${id}` : ``
-		const query = `?type=style&index=${i}${idQuery}${attrsQuery}${inheritQuery}`
-		return stringifyRequest (matchResource + src + query)
+		const query = `?vue&type=style&index=${i}${idQuery}${attrsQuery}${inheritQuery}`
+		return stringifyRequest ( src + query)
 	}
 
 	function genCSSModulesCode (style, request, i) {

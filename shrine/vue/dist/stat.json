@@ -1,21 +1,31 @@
 {
-  "moduleNum": 16,
-  "moduleId": [
+  "moduleNums": 26,
+  "moduleIds": [
     "../../buildin/global.js",
-    "../../node_modules/css-loader/dist/cjs.js!../../node_modules/less-loader/dist/cjs.js!./vue-loader/lib/index.js!./a.vue?type=style&index=0&id=76ee1843&scoped=true&lang=less&",
+    "../../node_modules/css-loader/dist/cjs.js!./vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/less-loader/dist/cjs.js!./vue-loader/lib/index.js?!./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true&lang=less&",
+    "../../node_modules/css-loader/dist/cjs.js!./vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/less-loader/dist/cjs.js!./vue-loader/lib/index.js?!./b.vue?vue&type=style&index=0&id=76fc2fc4&scoped=true&lang=less&",
     "../../node_modules/css-loader/dist/runtime/api.js",
     "../../node_modules/process/browser.js",
     "../../node_modules/setimmediate/setImmediate.js",
+    "../../node_modules/style-loader/index.js!../../node_modules/css-loader/dist/cjs.js!./vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/less-loader/dist/cjs.js!./vue-loader/lib/index.js?!./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true&lang=less&",
+    "../../node_modules/style-loader/index.js!../../node_modules/css-loader/dist/cjs.js!./vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/less-loader/dist/cjs.js!./vue-loader/lib/index.js?!./b.vue?vue&type=style&index=0&id=76fc2fc4&scoped=true&lang=less&",
     "../../node_modules/style-loader/lib/addStyles.js",
     "../../node_modules/style-loader/lib/urls.js",
     "../../node_modules/timers-browserify/main.js",
     "../../node_modules/vue/dist/vue.runtime.esm.js",
-    "./a.js!./=!./vue-loader/lib/index.js!./a.vue?type=script&",
-    "./a.less!./=!./vue-loader/lib/index.js!./a.vue?type=style&index=0&id=76ee1843&scoped=true&lang=less&",
-    "./a.pug?vue!./=!./vue-loader/lib/index.js!./a.vue?type=template&id=76ee1843&scoped=true&lang=pug&",
     "./a.vue",
+    "./a.vue?vue&type=script&",
+    "./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true&lang=less&",
+    "./a.vue?vue&type=template&id=76ee1843&scoped=true&lang=pug&",
+    "./b.vue",
+    "./b.vue?vue&type=script&",
+    "./b.vue?vue&type=style&index=0&id=76fc2fc4&scoped=true&lang=less&",
+    "./b.vue?vue&type=template&id=76fc2fc4&scoped=true&lang=pug&",
     "./index.js",
-    "./vue-loader/lib/loaders/templateLoader.js?!../../node_modules/pug-plain-loader/index.js!./vue-loader/lib/index.js!./a.vue?type=template&id=76ee1843&scoped=true&lang=pug&",
+    "./vue-loader/lib/index.js?!./a.vue?vue&type=script&",
+    "./vue-loader/lib/index.js?!./b.vue?vue&type=script&",
+    "./vue-loader/lib/loaders/templateLoader.js?!../../node_modules/pug-plain-loader/index.js!./vue-loader/lib/index.js?!./a.vue?vue&type=template&id=76ee1843&scoped=true&lang=pug&",
+    "./vue-loader/lib/loaders/templateLoader.js?!../../node_modules/pug-plain-loader/index.js!./vue-loader/lib/index.js?!./b.vue?vue&type=template&id=76fc2fc4&scoped=true&lang=pug&",
     "./vue-loader/lib/runtime/componentNormalizer.js"
   ]
 }

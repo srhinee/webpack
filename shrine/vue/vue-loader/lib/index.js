@@ -117,10 +117,10 @@ module.exports = function (source) {
 		const idQuery = `&id=${id}`
 		const scopedQuery = hasScoped ? `&scoped=true` : ``
 		const attrsQuery = attrsToQuery (descriptor.template.attrs)
-		const query = `?type=template${idQuery}${scopedQuery}${attrsQuery}${inheritQuery}`
+		const query = `?vue&type=template${idQuery}${scopedQuery}${attrsQuery}${inheritQuery}`
 		const fileName = src.match (/(\w+)\.vue/)[1]
 		const matchResource = `${fileName}.${descriptor.template.attrs.lang}?vue!=!vue-loader!`
-		const request = templateRequest = stringifyRequest (matchResource + src + query)
+		const request = templateRequest = stringifyRequest (src + query)
 		templateImport = `import { render, staticRenderFns } from ${request}`
 	}
 
@@ -131,8 +131,8 @@ module.exports = function (source) {
 		const attrsQuery = attrsToQuery (descriptor.script.attrs)
 		const fileName = src.match (/(\w+)\.vue/)[1]
 		const matchResource = `${fileName}.${descriptor.script.attrs.lang || 'js'}!=!vue-loader!`
-		const query = `?type=script${attrsQuery}${inheritQuery}`
-		const request = stringifyRequest (matchResource + src + query)
+		const query = `?vue&type=script${attrsQuery}${inheritQuery}`
+		const request = stringifyRequest (src + query)
 		scriptImport = (
 			`import script from ${request}\n` +
 			`export * from ${request}` // support named exports
