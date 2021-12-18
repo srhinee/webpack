@@ -30,7 +30,6 @@ function loadTemplateCompiler (loaderContext) {
 		}
 	}
 }
-let counter=1
 module.exports = function (source) {
 	const loaderContext = this
 
@@ -85,7 +84,6 @@ module.exports = function (source) {
 			!!options.appendExtension
 		)
 	}
-	console.log('loader'+counter++)
 	// module id for scoped CSS & hot-reload
 	const rawShortFilePath = path
 	.relative (context, resourcePath)
