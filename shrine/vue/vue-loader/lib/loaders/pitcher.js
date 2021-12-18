@@ -119,7 +119,6 @@ module.exports.pitch = function (remainingRequest) {
         stylePostLoaderPath,
         ...beforeLoaders
       ])
-      // console.log(request)
       return query.module
         ? `export { default } from  ${request}; export * from ${request}`
         : `export * from ${request}`
@@ -150,7 +149,6 @@ module.exports.pitch = function (remainingRequest) {
       templateLoaderPath + `??vue-loader-options`,
       ...preLoaders
     ])
-    // console.log(request)
     // the template compiler uses esm exports
     return `export * from ${request}`
   }

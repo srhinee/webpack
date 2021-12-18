@@ -1,4 +1,5 @@
 const NodeJsInputFileSystem = require ('enhanced-resolve/lib/NodeJsInputFileSystem')
+const { sleep } = require ("@yarnpkg/lockfile");
 const path = '/Users/apple/project/git/web/Origin/webpack/shrine/shaking/webpack.config.js'
 
 class Storage {
@@ -203,10 +204,32 @@ function read (duration) {
 	})
 }
 
-let count = 1, provide = read (900)
-let interval = setInterval (() => {
-	count += 1
-	provide ()
-	if (count === 4) clearInterval (interval)
-}, 100)
+// let count = 1, provide = read (900)
+// let interval = setInterval (() => {
+// 	count += 1
+// 	provide ()
+// 	if (count === 4) clearInterval (interval)
+// }, 100)
 
+
+class t{
+	constructor () {
+		this.time=0
+	}
+	say () {
+		console.log ("hi");
+		return this
+	}
+
+	sleep (time) {
+		let o = {sleep:this.sleep.bind(this)};
+		o.dog=(s)=>{
+			this.time+=time
+			setTimeout(()=>console.log(s),this.time)
+			return o
+		}
+		return o
+	}
+}
+//链式延时执行函数
+new t().say().sleep(1000).dog(123).dog(234).sleep(2000).dog(456)

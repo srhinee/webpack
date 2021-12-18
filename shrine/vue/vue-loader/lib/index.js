@@ -78,7 +78,6 @@ module.exports = function (source) {
 	// e.g. foo.vue?type=template&id=xxxxx
 	// and we will return early
 	if (incomingQuery.type) {
-		console.log('%c'+request+'\n'+incomingQuery.type,'color:#90a1f0')
 		return selectBlock (
 			descriptor,
 			loaderContext,
@@ -153,7 +152,6 @@ module.exports = function (source) {
 			isServer || isShadow // needs explicit injection?
 		)
 	}
-	console.log('%c'+stylesCode,'color:#f93516')
 	let code = `
 ${templateImport}
 ${scriptImport}

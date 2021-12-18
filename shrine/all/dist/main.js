@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/index.js!./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true&":
-/*!***************************************************************************************************************************************************!*\
-  !*** (webpack)/node_modules/css-loader/dist/cjs.js!(webpack)/node_modules/vue-loader/lib!./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true& ***!
-  \***************************************************************************************************************************************************/
+/***/ "../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/vue-loader/lib/index.js?!./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** (webpack)/node_modules/css-loader/dist/cjs.js!(webpack)/node_modules/vue-loader/lib/loaders/stylePostLoader.js!(webpack)/node_modules/vue-loader/lib??vue-loader-options!./a.vue?vue&type=style&index=0&id=76ee1843&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../../node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n.a {\\n\\tcolor: red;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./a.vue?(webpack)/node_modules/css-loader/dist/cjs.js!(webpack)/node_modules/vue-loader/lib");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../../node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\n.a[data-v-76ee1843] {\\n\\tcolor: red;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./a.vue?(webpack)/node_modules/css-loader/dist/cjs.js!(webpack)/node_modules/vue-loader/lib/loaders/stylePostLoader.js!(webpack)/node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
