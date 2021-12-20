@@ -119,7 +119,7 @@ module.exports = function (source) {
 		const attrsQuery = attrsToQuery (descriptor.template.attrs)
 		const query = `?type=template${idQuery}${scopedQuery}${attrsQuery}${inheritQuery}`
 		const fileName = src.match (/(\w+)\.vue/)[1]
-		const matchResource = `${fileName}.${descriptor.template.attrs.lang}?type=template!=!vue-loader!`
+		const matchResource = `${fileName}${descriptor.template.attrs.lang ? '.' + descriptor.template.attrs.lang : ''}?type=template!=!vue-loader!`
 		const request = templateRequest = stringifyRequest (matchResource + src + query)
 		templateImport = `import { render, staticRenderFns } from ${request}`
 	}

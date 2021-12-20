@@ -106,6 +106,15 @@ class VueLoaderPlugin {
 			}
 		}
 
+		for (let rule of rules) {
+			let loaders = rule.use
+			for (let i in loaders) {
+				if (loaders[i].loader === 'css-loader') {
+					loaders.splice (++i, 0, stylePostLoaderRule)
+				}
+			}
+		}
+
 		// replace original rules
 		compiler.options.module.rules = [
 			templateLoaderRule,
