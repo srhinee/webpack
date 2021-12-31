@@ -1,4 +1,5 @@
-import fun from 'a.css!=!./loader.js!./index.js'
+import fun from './a.js'
+// import fun from 'a.css!=!./loader.js!./index.js'
 /* STYLE: body { background: red; } */
 function log (a) {
   console.log(a)
