@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Tutorial Demo</title>
+	<style>
+		body {
+			padding: 0;
+		}
+
+		#container {
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+<div id="container"></div>
+<script src="https://gw.alipayobjects.com/os/lib/antv/g6/4.5.2/dist/g6.min.js">
+</script>
+<script src="./data.js"></script>
+<script src="./config.js"></script>
+
+<script>
+	const graph = new G6.TreeGraph (config);
+
+	graph.node (function(node) {
+		return {
+			label: node.id
+		};
+	});
+
+	graph.data (data);
+	graph.render ();
+	graph.fitView ();
+	graph.on('node:mouseenter', (evt) => {
+		const { item } = evt;
+		graph.setItemState(item, 'hover', true);
+	});
+
+	graph.on('node:mouseleave', (evt) => {
+		const { item } = evt;
+		graph.setItemState(item, 'hover', false);
+	});
+	if (typeof window !== "undefined") window.onresize = () => {
+		if (!graph || graph.get ("destroyed")) return;
+		if (!container || !container.scrollWidth || !container.scrollHeight) return;
+		graph.changeSize (container.scrollWidth, container.scrollHeight);
+	};
+
+</script>
+</body>
+</html>

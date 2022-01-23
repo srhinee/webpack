@@ -1,5 +1,7 @@
-const path = require ("path")
-const VueLoaderPlugin = require ("./vue-loader").VueLoaderPlugin
+const path = require ("path");
+const VueLoaderPlugin = require ("./vue-loader").VueLoaderPlugin;
+const webpackUtilPlugin = require ("shrine/webpackModulesCountePlugin.js");
+
 module.exports = {
 	entry: path.resolve (__dirname, "index.js"),
 	output: {
@@ -10,32 +12,32 @@ module.exports = {
 	mode: "development",
 	module: {
 		rules: [
-			{test: /\.vue$/, use: "vue-loader"},
+			{ test: /\.vue$/, use: "vue-loader" },
 			{
 				test: /\.pug$/,
-				loader: 'pug-plain-loader'
+				loader: "pug-plain-loader"
 			},
 			{
 				test: /\.less$/,
 				use: [{
-					loader: 'style-loader' // creates style nodes from JS strings
+					loader: "style-loader" // creates style nodes from JS strings
 				}, {
-					loader: 'css-loader' // translates CSS into CommonJS
+					loader: "css-loader" // translates CSS into CommonJS
 				}, {
-					loader: 'less-loader' // compiles Less to CSS
+					loader: "less-loader" // compiles Less to CSS
 				}]
 			},
 			{
 				test: /\.m?js$/,
 				exclude: /(node_modules|bower_components)/,
 				use: {
-					loader: 'babel-loader',
+					loader: "babel-loader",
 					options: {
-						presets: ['@babel/preset-env']
+						presets: ["@babel/preset-env"]
 					}
 				}
 			}
 		]
 	},
-	plugins: [new VueLoaderPlugin ()]
-}
+	plugins: [new VueLoaderPlugin (), new webpackUtilPlugin ()]
+};

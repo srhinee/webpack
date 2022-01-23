@@ -1,4 +1,5 @@
-const path = require ("path")
+const path = require ("path");
+const webpackPlugin = require ("../webpackModulesCountePlugin.js");
 module.exports = {
 	entry: path.resolve (__dirname, "index.js"),
 	output: {
@@ -9,7 +10,8 @@ module.exports = {
 	mode: "development",
 	module: {
 		rules: [
-			{test: /\.css$/, use: ["style-loader", "css-loader"]}
+			{ test: /\.css$/, use: ["style-loader", "css-loader"] }
 		]
 	},
-}
+	plugins: [new webpackPlugin ()]
+};
