@@ -1,2 +1,3 @@
-import {bar} from './a1.js';
-console.log(bar);
+import('./a.js').then (({bar}) => {
+  console.log (bar)
+})

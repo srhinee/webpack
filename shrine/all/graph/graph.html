@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8"/>
 	<title>Tutorial Demo</title>
 	<style>
-		body {
-			padding: 0;
-		}
+    body {
+      padding: 0;
+    }
 
-		#container {
-			height: 100vh;
-		}
+    #container {
+      height: 100vh;
+    }
+
+    #myCanvas {
+      display: block;
+    }
+
+    #button {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      position: absolute;
+      font-size: 1em;
+      text-transform: uppercase;
+	    text-align: center;
+      padding: 7px 20px;
+      right: 20px;
+      width: 80px;
+      bottom: 30px;
+      border-radius: 10px;
+      color: white;
+      text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.8);
+      border: 5px solid transparent;
+      border-bottom-color: rgba(0, 0, 0, 0.35);
+      background: hsl(40, 75%, 77%);
+      cursor: pointer;
+      outline: 0 !important;
+
+      animation: pulse 1s infinite alternate;
+      transition: background 0.4s, border 0.2s, margin 0.2s;
+    }
+
+    #button:hover {
+      background: hsl(18, 100%, 70%);
+      margin-top: -1px;
+      animation: none;
+    }
+
+    #button:active {
+      border-bottom-width: 0;
+      margin-top: 5px;
+    }
+
+    @keyframes pulse {
+      0% {
+        bottom: 30px;
+      }
+      100% {
+        bottom: 36px;
+      }
+    }
 	</style>
 </head>
 <body>
 <div id="container"></div>
+<div id="button"></div>
 <script src="https://gw.alipayobjects.com/os/lib/antv/g6/4.5.2/dist/g6.min.js">
 </script>
 <script src="./data.js"></script>
 <script src="./config.js"></script>
-
-<script>
-	const graph = new G6.TreeGraph (config);
-
-	graph.node (function(node) {
-		return {
-			label: node.id
-		};
-	});
-
-	graph.data (data);
-	graph.render ();
-	graph.fitView ();
-	graph.on('node:mouseenter', (evt) => {
-		const { item } = evt;
-		graph.setItemState(item, 'hover', true);
-	});
-
-	graph.on('node:mouseleave', (evt) => {
-		const { item } = evt;
-		graph.setItemState(item, 'hover', false);
-	});
-	if (typeof window !== "undefined") window.onresize = () => {
-		if (!graph || graph.get ("destroyed")) return;
-		if (!container || !container.scrollWidth || !container.scrollHeight) return;
-		graph.changeSize (container.scrollWidth, container.scrollHeight);
-	};
-
-</script>
+<script src="./base.js"></script>
 </body>
 </html>

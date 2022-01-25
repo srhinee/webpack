@@ -209,7 +209,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b.js */ \"./b.js\");\n\r\n\r\nObject(_b_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(1, 2)\r\n\r\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./c */ \"./c.js\")).then(del => del(1, 2))\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (args) {\r\n  return args+'2222'\r\n});\r\n\n\n//# sourceURL=webpack:///./a.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b.js */ \"./b.js\");\n\n\nObject(_b_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(1, 2)\n\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./c */ \"./c.js\")).then(del => del(1, 2))\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (args) {\n  return args+'2222'\n});\n\n\n//# sourceURL=webpack:///./a.js?");
 
 /***/ }),
 
@@ -221,7 +221,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_j
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return add; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"unused\", function() { return unused; });\n/* harmony import */ var _d_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./d.js */ \"./d.js\");\n\r\n\r\nfunction add (n1, n2) {\r\n\treturn n1 + n2\r\n}\r\n\r\nfunction unused (arr) {\r\n\tconsole.log ('unused', arr)\r\n}\r\n\r\nObject(_d_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]) (100, 11)\r\n\n\n//# sourceURL=webpack:///./b.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return add; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"unused\", function() { return unused; });\n/* harmony import */ var _d_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./d.js */ \"./d.js\");\n\n\nfunction add (n1, n2) {\n\treturn n1 + n2\n}\n\nfunction unused (arr) {\n\tconsole.log ('unused', arr)\n}\n\nObject(_d_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]) (100, 11)\n\n\n//# sourceURL=webpack:///./b.js?");
 
 /***/ }),
 
@@ -233,7 +233,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return mod; });\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './a.vue'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\r\nfunction mod(n1, n2) {\r\n\tconsole.log(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './a.vue'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))\r\n\treturn n1 % n2\r\n}\r\n\n\n//# sourceURL=webpack:///./d.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return mod; });\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './a.vue'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\nfunction mod(n1, n2) {\n\tconsole.log(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './a.vue'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))\n\treturn n1 % n2\n}\n\n\n//# sourceURL=webpack:///./d.js?");
 
 /***/ }),
 
@@ -245,7 +245,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _a_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a.js */ \"./a.js\");\n// import fun from 'a.css!=!./loader.js!./index.js'\r\n/* STYLE: body { background: red; } */\r\n\r\n\r\nfunction log (a) {\r\n\tconsole.log (a);\r\n}\r\n\r\nlog (_a_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _a_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a.js */ \"./a.js\");\n// import fun from 'a.css!=!./loader.js!./index.js'\n/* STYLE: body { background: red; } */\n\n\nfunction log (a) {\n\tconsole.log (a);\n}\n\nlog (_a_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 

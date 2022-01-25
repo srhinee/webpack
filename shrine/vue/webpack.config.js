@@ -1,6 +1,6 @@
 const path = require ("path");
 const VueLoaderPlugin = require ("./vue-loader").VueLoaderPlugin;
-const webpackUtilPlugin = require ("shrine/webpackModulesCountePlugin.js");
+const webpackUtilPlugin = require ("../webpackModulesCountePlugin.js");
 
 module.exports = {
 	entry: path.resolve (__dirname, "index.js"),
