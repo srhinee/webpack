@@ -20,7 +20,15 @@
           }
         },
         "drag-canvas",
-        "zoom-canvas"
+        "zoom-canvas",
+        {
+          type: 'tooltip',
+          formatText (item) {
+            debugger
+            return item.label
+          },
+          offset: 10,
+        },
       ]
     },
 

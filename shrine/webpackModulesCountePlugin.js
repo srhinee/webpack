@@ -102,16 +102,22 @@ module.exports = class webpackModuleCounterPlugin {
 
       compilation.hooks.afterHash.tap (PLUGIN_NAME, () => {
         const blockInfoMap = extraceBlockInfoMap (compilation)
-
+        const baseRoot = {
+          id: "N0",
+          label: 'main chunk',
+          meta: {type: 'block'},
+        }
         let index = 1
+        let results = []
+        let getNode = block => ({
+          id: 'N' + index++,
+          label: block.request.split ('/').pop (),
+          meta: {type, request: block.request, id: block.id},
+          children: []
+        })
         let iteratorDep = (blocks, result, type = 'module') => {
           blocks.forEach (block => {
-            const moduleTree = {
-              id: 'N' + index++,
-              label: block.request.split ('/').pop (),
-              meta: {type, request: block.request, id: block.id},
-              children: []
-            }
+            const moduleTree = getNode(block)
             const {modules, blocks} = blockInfoMap.get (block)
             if (modules.size || blocks.length) {
               iteratorDep (modules, moduleTree.children)
@@ -120,30 +126,13 @@ module.exports = class webpackModuleCounterPlugin {
             result.push (moduleTree)
           })
         }
-        let results = []
-        iteratorDep (entries, results)
-
-        const baseRoot = {
-          id: "N0",
-          label: 'main chunk',
-          meta: {type: 'block'},
-        }
-        const originData = Object.assign ({}, baseRoot, {children: results})
-
-
-        const mainChunks = chunks.filter (chunk => chunk.id === 'main')
-        iteratorDep = (chunk, block, result, type = 'module') => {
-          const moduleTree = {
-            id: 'N' + index++,
-            label: block.request.split ('/').pop (),
-            meta: {type, request: block.request, id: block.id},
-            children: []
-          }
+        let iteratorChunk = (chunk, block, result, type = 'module') => {
+          const moduleTree = getNode(block)
           const {modules, blocks} = blockInfoMap.get (block)
 
           if (modules.size) {
             const interModules = new Set ([...modules].filter (x => chunk._modules.has (x)))
-            interModules.forEach (b => iteratorDep (chunk, b, moduleTree.children))
+            interModules.forEach (b => iteratorChunk (chunk, b, moduleTree.children))
           }
           if (blocks.length) {
             blocks.forEach (b => {
@@ -151,17 +140,25 @@ module.exports = class webpackModuleCounterPlugin {
                 const group = c._groups.values ().next ().value
                 return group && group._blocks.has (b)
               })
-              blockChunks.forEach (c => iteratorDep (c, b, moduleTree.children, 'block'))
+              blockChunks.forEach (c => iteratorChunk (c, b, moduleTree.children, 'block'))
             })
           }
           if (!modules.size && !blocks.length) delete moduleTree.children
           result.push (moduleTree)
         }
+
+
+        iteratorDep (entries, results)
+        const originData = Object.assign ({}, baseRoot, {children: results})
+
+
         results = []
         index = 1
+        const mainChunks = chunks.filter (chunk => chunk.id === 'main')
         const optimizeData = Object.assign ({}, baseRoot, {children: results})
+        mainChunks.forEach (mainChunk => iteratorChunk (mainChunk, mainChunk.entryModule, results))
 
-        mainChunks.forEach (mainChunk => iteratorDep (mainChunk, mainChunk.entryModule, results))
+
         fs.exists ('graph', exists => {
           if (!exists) fs.mkdirSync ('graph')
           fs.writeFile ('graph/data.js', dataTemplate ({originData, optimizeData}), (err) => {if (err) throw err})
@@ -170,4 +167,3 @@ module.exports = class webpackModuleCounterPlugin {
     })
   }
 }
-
